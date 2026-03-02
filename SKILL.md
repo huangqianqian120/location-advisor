@@ -3,11 +3,18 @@ name: location-advisor
 description: 选址顾问系统。基于McKinsey方法论，通过MECE因素拆解、数据驱动评分和假设验证，帮助完成零售门店/餐饮/仓库/工厂/办公室等选址决策。支持API集成和本地fallback。
 license: MIT
 metadata:
-  author: Qianqian
-  version: "1.0"
-  last_updated: "2026-03-02"
-  architecture: "Progressive Disclosure + API Integration"
+  openclaw:
+    emoji: "📍"
+    requires:
+      env:
+        - AMAP_API_KEY  # 高德地图API Key（可选）
+      bins:
+        - curl
 ---
+
+**配置说明**：
+- 有 AMAP_API_KEY → 自动调用高德API获取客流、人口、租金数据
+- 无 AMAP_API_KEY → 引导用户手动输入数据（使用 user-input-template.md）
 
 # 选址顾问 V1.0
 
